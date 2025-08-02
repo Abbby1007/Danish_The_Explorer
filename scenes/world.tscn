@@ -5,3 +5,5 @@
 [node name="world" type="Node2D"]
 
 [node name="player" parent="." instance=ExtResource("1_nnsk1")]
+
+[node name="player2" parent="." instance=ExtResource("1_nnsk1")]
