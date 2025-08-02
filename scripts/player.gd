@@ -3,9 +3,15 @@ extends CharacterBody2D
 const speed = 100
 var current_dir = "none"
 
+#This function tells the game to have this animation ready when the game starts
+func _ready():
+	$AnimatedSprite2D.play("front_idle")
+
+
 func _physics_process(delta):
 	player_movement(delta)
 	
+#controls the movement and determines where the player is facing
 func player_movement(delta):
 	
 	if Input.is_action_pressed("ui_right"):
@@ -34,6 +40,7 @@ func player_movement(delta):
 		velocity.y = 0
 		
 	move_and_slide()
+	#player movement function ends --------
 	# PLAYER ANIMATION START -----------------
 func play_anim(movement):
 	var dir = current_dir
@@ -51,5 +58,19 @@ func play_anim(movement):
 			anim.play("side_walk")
 		elif movement == 0:
 			anim.play("side_idle")
+			
+	elif dir == "down":
+		anim.flip_h = true
+		if movement == 1:
+			anim.play("front_walk")
+		elif movement == 0:
+			anim.play("front_idle")
+			
+	elif dir == "up":
+		anim.flip_h = true
+		if movement == 1:
+			anim.play("back_walk")
+		elif movement == 0:
+			anim.play("back_idle")
 	
 # PLAYER ANIMATION END ----------------------
