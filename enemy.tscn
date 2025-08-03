@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://hcxb2agejims"]
+[gd_scene load_steps=20 format=3 uid="uid://hcxb2agejims"]
 
 [ext_resource type="Texture2D" uid="uid://c1gxuim2ebwf7" path="res://art/characters/slime.png" id="1_7k104"]
 
@@ -128,12 +128,16 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_7k104"]
 radius = 40.6079
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_4gyqm"]
+radius = 4.0
+
 [node name="enemy" type="CharacterBody2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_3yqyl")
-animation = &"walk"
-frame_progress = 0.970851
+animation = &"idle"
+frame_progress = 0.0811194
+offset = Vector2(0, -6)
 
 [node name="detection_area" type="Area2D" parent="."]
 collision_layer = 2
@@ -141,3 +145,7 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detection_area"]
 shape = SubResource("CircleShape2D_7k104")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3)
+shape = SubResource("CircleShape2D_4gyqm")
