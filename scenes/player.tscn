@@ -414,6 +414,7 @@ animations = [{
 }]
 
 [node name="player" type="CharacterBody2D"]
+collision_layer = 3
 script = ExtResource("1_g2els")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -422,3 +423,5 @@ script = ExtResource("1_g2els")
 sprite_frames = SubResource("SpriteFrames_smehm")
 animation = &"back_idle"
 frame_progress = 0.770016
+
+[node name="Camera2D" type="Camera2D" parent="."]
