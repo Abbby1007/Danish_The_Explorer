@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://ciqb5opq3ynkd"]
+[gd_scene load_steps=56 format=3 uid="uid://ciqb5opq3ynkd"]
 
 [ext_resource type="Texture2D" uid="uid://bpboahr5qrnq" path="res://art/characters/player.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://cetfjs1cymss1" path="res://scripts/player.gd" id="1_g2els"]
@@ -413,15 +413,21 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_g2els"]
+radius = 6.08276
+
 [node name="player" type="CharacterBody2D"]
 collision_layer = 3
 script = ExtResource("1_g2els")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, -18)
 sprite_frames = SubResource("SpriteFrames_smehm")
 animation = &"back_idle"
 frame_progress = 0.770016
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5)
+shape = SubResource("CircleShape2D_g2els")
