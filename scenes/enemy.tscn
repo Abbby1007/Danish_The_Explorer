@@ -142,7 +142,7 @@ z_index = 1
 y_sort_enabled = true
 sprite_frames = SubResource("SpriteFrames_3yqyl")
 animation = &"idle"
-frame_progress = 0.480146
+frame_progress = 0.318816
 offset = Vector2(0, -6)
 
 [node name="detection_area" type="Area2D" parent="."]
