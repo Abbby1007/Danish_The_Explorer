@@ -1,5 +1,6 @@
-[gd_scene load_steps=20 format=3 uid="uid://hcxb2agejims"]
+[gd_scene load_steps=21 format=3 uid="uid://hcxb2agejims"]
 
+[ext_resource type="Script" uid="uid://bx6efx57e3cr0" path="res://enemy.gd" id="1_4gyqm"]
 [ext_resource type="Texture2D" uid="uid://c1gxuim2ebwf7" path="res://art/characters/slime.png" id="1_7k104"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7k104"]
@@ -132,11 +133,16 @@ radius = 40.6079
 radius = 4.0
 
 [node name="enemy" type="CharacterBody2D"]
+z_index = 1
+y_sort_enabled = true
+script = ExtResource("1_4gyqm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
+y_sort_enabled = true
 sprite_frames = SubResource("SpriteFrames_3yqyl")
 animation = &"idle"
-frame_progress = 0.0811194
+frame_progress = 0.61391
 offset = Vector2(0, -6)
 
 [node name="detection_area" type="Area2D" parent="."]
@@ -149,3 +155,6 @@ shape = SubResource("CircleShape2D_7k104")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -3)
 shape = SubResource("CircleShape2D_4gyqm")
+
+[connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
