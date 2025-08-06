@@ -26,3 +26,8 @@ func _on_detection_area_body_exited(body: Node2D) -> void:
 	player = null
 	player_chase = false
 	
+
+#hitbox functions
+
+func enemy():
+	pass

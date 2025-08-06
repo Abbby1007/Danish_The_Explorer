@@ -1,7 +1,13 @@
 extends CharacterBody2D
-
+#animation and speed variables
 const speed = 100
 var current_dir = "none"
+
+#player hitbox variables
+var enemy_inattack_range  = false
+var enemy_attack_cooldown = true
+var health =  100
+var player_alive = true
 
 #This function tells the game to have this animation ready when the game starts
 func _ready():
@@ -10,6 +16,12 @@ func _ready():
 
 func _physics_process(delta):
 	player_movement(delta)
+	enemy_attack()
+	if health <= 0:
+		player_alive = false  #ADD END SCREEN(RESPAWN OR GO BACK TO MENU)
+		health = 0
+		print("Player has been killed")
+		self.queue_free()
 	
 #controls the movement and determines where the player is facing
 func player_movement(delta):
@@ -74,3 +86,27 @@ func play_anim(movement):
 			anim.play("back_idle")
 	
 # PLAYER ANIMATION END ----------------------
+
+#player hitbox functions
+func player():
+	pass
+
+func _on_player_hitbox_body_entered(body):
+	if body.has_method("enemy"):
+		enemy_inattack_range = true
+	
+func _on_player_hitbox_body_exited(body):
+	if body.has_method("enemy"):
+		enemy_inattack_range = false
+		
+func enemy_attack():
+	if enemy_inattack_range and enemy_attack_cooldown == true:
+		health = health - 20
+		enemy_attack_cooldown = false
+		#starts timer
+		$attack_cooldown.start()
+		print(health)
+
+#when player timer goes off it sets attack cooldown to true
+func _on_attack_cooldown_timeout():
+	enemy_attack_cooldown = true
