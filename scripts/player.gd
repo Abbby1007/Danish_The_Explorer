@@ -107,10 +107,10 @@ func _on_player_hitbox_body_entered(body):
 func _on_player_hitbox_body_exited(body):
 	if body.has_method("enemy"):
 		enemy_inattack_range = false
-		
+	
 func enemy_attack():
 	if enemy_inattack_range and enemy_attack_cooldown == true:
-		health = health - 20
+		health = health - 10
 		enemy_attack_cooldown = false
 		#starts timer
 		$attack_cooldown.start()
