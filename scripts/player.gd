@@ -1,7 +1,7 @@
 extends CharacterBody2D
 #animation and speed variables
 const speed = 100
-var current_dir = "none"
+var current_dir = "down"
 
 #player hitbox variables
 var enemy_inattack_range  = false
