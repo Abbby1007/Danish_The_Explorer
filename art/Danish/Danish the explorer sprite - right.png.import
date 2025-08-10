@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2sfv74q67jls"
-path="res://.godot/imported/Danish the explorer sprite.png-e56ba6e20e130925a0fb76c5116dc063.ctex"
+uid="uid://dixjnuq6tc8qt"
+path="res://.godot/imported/Danish the explorer sprite - right.png-130c8379453e1635f89e8731e0d3c4a2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Danish the explorer sprite.png"
-dest_files=["res://.godot/imported/Danish the explorer sprite.png-e56ba6e20e130925a0fb76c5116dc063.ctex"]
+source_file="res://art/Danish/Danish the explorer sprite - right.png"
+dest_files=["res://.godot/imported/Danish the explorer sprite - right.png-130c8379453e1635f89e8731e0d3c4a2.ctex"]
 
 [params]
 
