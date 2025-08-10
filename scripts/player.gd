@@ -65,10 +65,10 @@ func play_anim(movement):
 	if dir == "right":
 		anim.flip_h = false
 		if movement == 1:
-			anim.play("side_walk")
+			anim.play("d_right")
 		elif movement == 0:
 			if attack_ip == false:
-				anim.play("side_idle")
+				anim.play("d_right")
 	elif dir == "left":
 		anim.flip_h = true
 		if movement == 1:
@@ -80,10 +80,10 @@ func play_anim(movement):
 	elif dir == "down":
 		anim.flip_h = true
 		if movement == 1:
-			anim.play("front_walk")
+			anim.play("d_front")
 		elif movement == 0:
 			if attack_ip == false:
-				anim.play("front_idle")
+				anim.play("d_front")
 			
 	elif dir == "up":
 		anim.flip_h = true

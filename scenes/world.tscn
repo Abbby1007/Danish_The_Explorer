@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ciqb5opq3ynkd" path="res://scenes/player.tscn" id="4_k0juu"]
 [ext_resource type="PackedScene" uid="uid://hcxb2agejims" path="res://scenes/enemy.tscn" id="5_71j4m"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qfnet"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_71j4m"]
 texture = ExtResource("1_4wyf3")
 0:0/0 = 0
 1:0/0 = 0
@@ -53,11 +53,11 @@ texture = ExtResource("1_4wyf3")
 3:5/0 = 0
 3:6/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i7141"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qfnet"]
 texture = ExtResource("2_k0juu")
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4mrxx"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i7141"]
 texture = ExtResource("3_71j4m")
 0:0/0 = 0
 5:0/0 = 0
@@ -87,9 +87,9 @@ texture = ExtResource("3_71j4m")
 
 [sub_resource type="TileSet" id="TileSet_7r4gi"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_qfnet")
-sources/1 = SubResource("TileSetAtlasSource_i7141")
-sources/2 = SubResource("TileSetAtlasSource_4mrxx")
+sources/0 = SubResource("TileSetAtlasSource_71j4m")
+sources/1 = SubResource("TileSetAtlasSource_qfnet")
+sources/2 = SubResource("TileSetAtlasSource_i7141")
 
 [node name="world" type="Node2D"]
 y_sort_enabled = true
@@ -112,7 +112,9 @@ layer_2/z_index = 1
 layer_2/tile_data = PackedInt32Array(-327685, 655362, 7, 393211, 393218, 7, 262147, 524290, 6, -327693, 655362, 7, 262132, 2, 5, -65548, 393218, 7, -327690, 524290, 6, -262140, 2, 1, 393207, 2, 1, -458749, 2, 1, -393223, 2, 1, 65522, 2, 1, 393215, 2, 1)
 
 [node name="player" parent="." instance=ExtResource("4_k0juu")]
-position = Vector2(-131, 21)
+position = Vector2(-115, 1)
 
 [node name="enemy" parent="." instance=ExtResource("5_71j4m")]
 position = Vector2(-50, -44)
+
+[node name="collisions" type="StaticBody2D" parent="."]

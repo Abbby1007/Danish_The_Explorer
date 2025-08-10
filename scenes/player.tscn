@@ -1,7 +1,9 @@
-[gd_scene load_steps=57 format=3 uid="uid://ciqb5opq3ynkd"]
+[gd_scene load_steps=60 format=3 uid="uid://ciqb5opq3ynkd"]
 
 [ext_resource type="Texture2D" uid="uid://bpboahr5qrnq" path="res://art/characters/player.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://cetfjs1cymss1" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://2sfv74q67jls" path="res://art/Danish the explorer sprite.png" id="3_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://dixjnuq6tc8qt" path="res://art/Danish the explorer sprite - right.png" id="4_dqkch"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hax0n"]
 atlas = ExtResource("1_3vyb7")
@@ -66,6 +68,10 @@ region = Rect2(192, 240, 48, 48)
 [sub_resource type="AtlasTexture" id="AtlasTexture_jc3p3"]
 atlas = ExtResource("1_3vyb7")
 region = Rect2(240, 240, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sc3ue"]
+atlas = ExtResource("3_qhqgy")
+region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2dvfe"]
 atlas = ExtResource("1_3vyb7")
@@ -274,6 +280,22 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_sc3ue")
+}],
+"loop": true,
+"name": &"d_front",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_dqkch")
+}],
+"loop": true,
+"name": &"d_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_2dvfe")
 }, {
 "duration": 1.0,
@@ -430,7 +452,7 @@ z_index = 1
 y_sort_enabled = true
 position = Vector2(-1, -18)
 sprite_frames = SubResource("SpriteFrames_smehm")
-animation = &"back_idle"
+animation = &"d_right"
 offset = Vector2(0, -15)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
