@@ -25,7 +25,7 @@ func _physics_process(delta):
 		player_alive = false  #ADD END SCREEN(RESPAWN OR GO BACK TO MENU)
 		health = 0
 		print("Player has been killed")
-		self.queue_free()
+		get_tree().reload_current_scene()
 	
 #controls the movement and determines where the player is facing
 func player_movement(delta):
