@@ -29,7 +29,6 @@ func _physics_process(delta):
 	
 #controls the movement and determines where the player is facing
 func player_movement(delta):
-	
 	if Input.is_action_pressed("ui_right"):
 		current_dir = "right"
 		play_anim(1)
