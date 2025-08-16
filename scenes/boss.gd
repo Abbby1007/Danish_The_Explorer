@@ -57,7 +57,7 @@ func deal_with_damage():
 			can_take_damage = false
 			print("slime health = ", health)
 			if health <= 0:
-				global.one_enemies = global.one_enemies + 1
+				global.one_boss = global.one_boss + 1
 				self.queue_free()
 		
 
