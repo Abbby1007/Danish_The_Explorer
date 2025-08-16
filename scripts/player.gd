@@ -6,7 +6,7 @@ var current_dir = "down"
 #player hitbox variables
 var enemy_inattack_range  = false
 var enemy_attack_cooldown = true
-var health =  100
+var health =  120
 var player_alive = true
 
 #attack variable
@@ -24,6 +24,8 @@ func _physics_process(delta):
 	if health <= 0:
 		player_alive = false  #ADD END SCREEN(RESPAWN OR GO BACK TO MENU)
 		health = 0
+		global.one_enemies == 0
+		global.one_boss == 0
 		print("Player has been killed")
 		get_tree().reload_current_scene()
 	
