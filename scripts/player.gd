@@ -134,10 +134,10 @@ func attack():
 			$AnimatedSprite2D.play("d_side_attack")
 			$deal_attack_timer.start()
 		if dir == "down":
-			$AnimatedSprite2D.play("front_attack")
+			$AnimatedSprite2D.play("d_front_attack")
 			$deal_attack_timer.start()
 		if dir == "up":
-			$AnimatedSprite2D.play("back_attack")
+			$AnimatedSprite2D.play("d_back_attack")
 			$deal_attack_timer.start()
 			
 
