@@ -147,3 +147,22 @@ func _on_deal_attack_timer_timeout():
 	$deal_attack_timer.stop()
 	global.player_current_attack = false
 	attack_ip = false
+
+func update_health():
+	var healthbar = $healthbar
+	
+	healthbar.value = health
+	
+	if health >= 100:
+		healthbar.visibile = false
+	else:
+		healthbar.visible = true
+
+func _on_regin_timer_timeout():
+	if health < 100:
+		health = health + 20
+		if health > 100:
+			health = 100
+	if health == 0:
+		health = 0
+			
