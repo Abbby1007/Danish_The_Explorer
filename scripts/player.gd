@@ -6,7 +6,7 @@ var current_dir = "down"
 #player hitbox variables
 var enemy_inattack_range  = false
 var enemy_attack_cooldown = true
-var health =  120
+var health =  100
 var player_alive = true
 
 #attack variable
@@ -21,6 +21,7 @@ func _physics_process(delta):
 	player_movement(delta)
 	enemy_attack()
 	attack()
+	update_health()
 	if health <= 0:
 		player_alive = false  #ADD END SCREEN(RESPAWN OR GO BACK TO MENU)
 		health = 0
@@ -111,7 +112,7 @@ func _on_player_hitbox_body_exited(body):
 	
 func enemy_attack():
 	if enemy_inattack_range and enemy_attack_cooldown == true:
-		health = health - 10
+		health = health - 15
 		enemy_attack_cooldown = false
 		#starts timer
 		$attack_cooldown.start()
@@ -154,7 +155,7 @@ func update_health():
 	healthbar.value = health
 	
 	if health >= 100:
-		healthbar.visibile = false
+		healthbar.visible = false
 	else:
 		healthbar.visible = true
 
@@ -163,6 +164,6 @@ func _on_regin_timer_timeout():
 		health = health + 20
 		if health > 100:
 			health = 100
-	if health == 0:
+	if health <= 0:
 		health = 0
 			
