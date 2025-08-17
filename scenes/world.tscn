@@ -32,8 +32,6 @@ position = Vector2(-173, -26)
 [node name="enemy" parent="." instance=ExtResource("5_71j4m")]
 position = Vector2(-89, -37)
 
-[node name="collisions" type="StaticBody2D" parent="."]
-
 [node name="enemy2" parent="." instance=ExtResource("5_71j4m")]
 position = Vector2(-101, 14)
 
