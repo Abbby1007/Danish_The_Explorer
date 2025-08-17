@@ -24,8 +24,8 @@ func _physics_process(delta):
 	if health <= 0:
 		player_alive = false  #ADD END SCREEN(RESPAWN OR GO BACK TO MENU)
 		health = 0
-		global.one_enemies == 0
-		global.one_boss == 0
+		global.one_enemies = 0
+		global.one_boss = 0
 		print("Player has been killed")
 		get_tree().reload_current_scene()
 	
