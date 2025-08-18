@@ -1,13 +1,22 @@
 [gd_scene load_steps=5 format=3 uid="uid://cqabaw2l7kxb3"]
 
 [ext_resource type="Script" uid="uid://bgwfoap5ruvef" path="res://scripts/win.gd" id="1_826fv"]
-[ext_resource type="Script" uid="uid://dt5up7xuhjpo6" path="res://scripts/continue.gd" id="1_r4oei"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_afbyi"]
 bg_color = Color(0.898039, 0.737255, 0.498039, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_826fv"]
 bg_color = Color(0.807843, 0.494118, 0, 1)
+
+[sub_resource type="GDScript" id="GDScript_kmqx5"]
+script/source = "extends Button
+
+
+
+
+func _on_pressed() :
+	get_tree().change_scene_to_file(\"res://scenes/world.tscn\")
+"
 
 [node name="Win" type="Control"]
 layout_mode = 3
@@ -34,20 +43,21 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -281.0
+offset_left = -404.5
 offset_top = -108.5
-offset_right = 281.0
+offset_right = 404.5
 offset_bottom = 108.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 45
-text = "Congratualtions"
+text = "Congratualtions 
+You have defeated the donut wizards"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="back_to_main_menu" type="Button" parent="."]
 layout_mode = 0
-offset_left = 707.0
+offset_left = 667.0
 offset_top = 555.0
 offset_right = 1140.0
 offset_bottom = 626.0
@@ -55,6 +65,6 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 45
 theme_override_styles/normal = SubResource("StyleBoxFlat_826fv")
 text = "Back TO Main Menu"
-script = ExtResource("1_r4oei")
+script = SubResource("GDScript_kmqx5")
 
 [connection signal="pressed" from="back_to_main_menu" to="." method="_on_back_to_main_menu_pressed"]

@@ -1,13 +1,22 @@
 [gd_scene load_steps=5 format=3 uid="uid://cwrxebuswtvow"]
 
-[ext_resource type="Script" uid="uid://bj4l036trt0p8" path="res://scenes/credit.gd" id="1_5egdn"]
-[ext_resource type="Script" uid="uid://dt5up7xuhjpo6" path="res://scripts/continue.gd" id="1_kmqx5"]
+[ext_resource type="Script" uid="uid://bj4l036trt0p8" path="res://scripts/credit.gd" id="1_5egdn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5egdn"]
 bg_color = Color(0.898039, 0.737255, 0.498039, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_st0h4"]
 bg_color = Color(0.807843, 0.494118, 0, 1)
+
+[sub_resource type="GDScript" id="GDScript_kmqx5"]
+script/source = "extends Button
+
+
+
+
+func _on_pressed() :
+	get_tree().change_scene_to_file(\"res://scenes/world.tscn\")
+"
 
 [node name="credit" type="Control"]
 layout_mode = 3
@@ -53,15 +62,14 @@ vertical_alignment = 1
 
 [node name="back_to_main_menu" type="Button" parent="."]
 layout_mode = 0
-offset_left = 707.0
+offset_left = 650.0
 offset_top = 555.0
-offset_right = 1140.0
+offset_right = 1120.0
 offset_bottom = 626.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 45
 theme_override_styles/normal = SubResource("StyleBoxFlat_st0h4")
 text = "Back TO Main Menu"
-script = ExtResource("1_kmqx5")
+script = SubResource("GDScript_kmqx5")
 
 [connection signal="pressed" from="back_to_main_menu" to="." method="_on_back_to_main_menu_pressed"]
-[connection signal="pressed" from="back_to_main_menu" to="back_to_main_menu" method="_on_pressed"]

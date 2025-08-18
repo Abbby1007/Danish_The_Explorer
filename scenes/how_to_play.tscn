@@ -1,12 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://b57121kg8qw47"]
+[gd_scene load_steps=5 format=3 uid="uid://b57121kg8qw47"]
 
-[ext_resource type="Script" uid="uid://dt5up7xuhjpo6" path="res://scripts/continue.gd" id="1_d4i75"]
+[ext_resource type="Script" uid="uid://32pmith5kcma" path="res://scripts/how_to_play.gd" id="1_d4i75"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6qix6"]
 bg_color = Color(0.898039, 0.737255, 0.498039, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d4i75"]
 bg_color = Color(0.807843, 0.494118, 0, 1)
+
+[sub_resource type="GDScript" id="GDScript_kmqx5"]
+script/source = "extends Button
+
+
+
+
+func _on_pressed() :
+	get_tree().change_scene_to_file(\"res://scenes/world.tscn\")
+"
 
 [node name="How_To_Play" type="Control"]
 layout_mode = 3
@@ -15,6 +25,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_d4i75")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -35,7 +46,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 45
 theme_override_styles/normal = SubResource("StyleBoxFlat_d4i75")
 text = "CONTINUE"
-script = ExtResource("1_d4i75")
+script = SubResource("GDScript_kmqx5")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -59,4 +70,4 @@ Good Luck"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="Continue" to="Continue" method="_on_pressed"]
+[connection signal="pressed" from="Continue" to="." method="_on_continue_pressed"]
