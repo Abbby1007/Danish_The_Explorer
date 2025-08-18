@@ -2,7 +2,7 @@
 Play Able Link: https://abbby1007.itch.io/danish-the-explorer
 
 How to Play:
--Use arrow keys to move left, right, up and down
+*Use arrow keys to move left, right, up and down
 -press "e" to attack the donut wizards
 -your health regenerates every 5 seconds
 
