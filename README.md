@@ -1,5 +1,6 @@
 # Danish_The_Explorer
-https://abbby1007.itch.io/danish-the-explorer
+[![Athena Award Badge](https://img.shields.io/endpoint?url=https%3A%2F%2Faward.athena.hackclub.com%2Fapi%2Fbadge)](https://award.athena.hackclub.com?utm_source=readme)
+
 Play Able Link: https://abbby1007.itch.io/danish-the-explorer
 
 How to Play:
