@@ -2,9 +2,9 @@
 Play Able Link: https://abbby1007.itch.io/danish-the-explorer
 
 How to Play:
-*Use arrow keys to move left, right, up and down
--press "e" to attack the donut wizards
--your health regenerates every 5 seconds
+Use arrow keys to move left, right, up and down
+press "e" to attack the donut wizards
+<u>your health regenerates every 5 seconds<u>
 
 Information:
 -This Project was made for Hack Clubs Athena event
