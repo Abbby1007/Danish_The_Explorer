@@ -26,6 +26,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_6qix6")
 
 [node name="Continue" type="Button" parent="."]
+layout_mode = 0
 offset_left = 821.0
 offset_top = 555.0
 offset_right = 1138.0

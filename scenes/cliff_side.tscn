@@ -1,9 +1,25 @@
-[gd_scene load_steps=5 format=3 uid="uid://ck3vnk3oodujs"]
+[gd_scene load_steps=9 format=3 uid="uid://ck3vnk3oodujs"]
 
 [ext_resource type="TileSet" uid="uid://cnfefuwtcw5eo" path="res://scenes/world.tres" id="1_bnp4s"]
 [ext_resource type="Script" uid="uid://iy220wox083b" path="res://scripts/cliff_side.gd" id="1_jcley"]
 [ext_resource type="PackedScene" uid="uid://ciqb5opq3ynkd" path="res://scenes/player.tscn" id="2_3gcux"]
 [ext_resource type="PackedScene" uid="uid://bmxbppp6pgeer" path="res://scenes/Boss.tscn" id="4_jcley"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_jcley"]
+a = Vector2(61, -124)
+b = Vector2(64, 110)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_v3mbj"]
+a = Vector2(327, 273)
+b = Vector2(5, 270)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ocn37"]
+a = Vector2(0, 238)
+b = Vector2(-1, 3)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_0riok"]
+a = Vector2(70, -8)
+b = Vector2(387, -7)
 
 [node name="cliff_side" type="Node2D"]
 script = ExtResource("1_jcley")
@@ -29,3 +45,29 @@ layer_2/tile_data = PackedInt32Array(-327685, 655362, 7, 393211, 393218, 7, 2621
 position = Vector2(-131, -7)
 
 [node name="Boss" parent="." instance=ExtResource("4_jcley")]
+
+[node name="leftwall" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="leftwall"]
+position = Vector2(-281, -3)
+shape = SubResource("SegmentShape2D_jcley")
+
+[node name="bottomwall" type="StaticBody2D" parent="."]
+position = Vector2(-326, 164)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bottomwall"]
+position = Vector2(99, -326)
+shape = SubResource("SegmentShape2D_v3mbj")
+
+[node name="rightwall" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rightwall"]
+position = Vector2(97, -127)
+shape = SubResource("SegmentShape2D_ocn37")
+
+[node name="topwall" type="StaticBody2D" parent="."]
+position = Vector2(97, -127)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="topwall"]
+position = Vector2(-385, 8)
+shape = SubResource("SegmentShape2D_0riok")
