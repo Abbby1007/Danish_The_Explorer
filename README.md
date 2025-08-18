@@ -1,4 +1,5 @@
 # Danish_The_Explorer
+https://abbby1007.itch.io/danish-the-explorer
 Play Able Link: https://abbby1007.itch.io/danish-the-explorer
 
 How to Play:
@@ -12,6 +13,9 @@ It was inspired by a google slide show i made while bored in Chemistry class. (1
 The slide show was about a Danish explorer who saves a bagel village from Donut wizards.
 This Game only has Danish the Explorer and the donut wizards.
 Danish the Explorer is inspired by Indiana Jones and Dora the Explorer
+
+I made this because I have always wanted to make a game and now I can say I have
+I struggled with staying motivated, designing the player and enemy, while also struggling to get use to Godot.
 
 Credit:
 The player and enemy sprites were made by me (Abigail Loken)
